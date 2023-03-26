@@ -14,7 +14,7 @@ function generatePasswords(Dictionary, NumberOfPasswords, passwordLength, separa
   if (NumberOfPasswords > 100000) return new Error("Cannot have number over 100k");
   if (passwordLength > 100) return new Error("Cannot have have password over 100 words");
   if (passwordLength < 2) return new Error("Password length must be at least 2");
-  let returnCsv = [];
+  let returnValue = [];
   for (let i = 0; i < NumberOfPasswords; i++) {
     let password = "";
     for (let j = 1; j <= passwordLength; j++) {
@@ -22,9 +22,9 @@ function generatePasswords(Dictionary, NumberOfPasswords, passwordLength, separa
       if (TitleCase) word = word.charAt(0).toUpperCase() + word.slice(1);
       password += word;
     }
-    returnCsv.push(password);
+    returnValue.push(password);
   }
-  return returnCsv;
+  return returnValue;
 }
 
-writeFileSync(__dirname + "/Passwords.json", JSON.stringify(generatePasswords(chars, 10000, 5, " ", true), null, 2));
+writeFileSync(__dirname + "/Passwords.json", JSON.stringify(generatePasswords(chars, 5, 3, ".", true), null, 2));

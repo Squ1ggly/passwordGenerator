@@ -1,0 +1,19 @@
+{
+  "name": "passwordgenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generatePasswords.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Squ1ggly/passwordGenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Squ1ggly/passwordGenerator/issues"
+  },
+  "homepage": "https://github.com/Squ1ggly/passwordGenerator#readme"
+}
