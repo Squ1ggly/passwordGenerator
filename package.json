@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Squ1ggly/passwordGenerator/issues"
   },
-  "homepage": "https://github.com/Squ1ggly/passwordGenerator#readme"
+  "homepage": "https://github.com/Squ1ggly/passwordGenerator#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
