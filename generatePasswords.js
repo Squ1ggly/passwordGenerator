@@ -42,7 +42,7 @@ function generatePassphrases(Dictionary) {
   }
 
   let returnCsv = [];
-  for (let i = 0; i < NumberOfPasswords; i++) {
+  for (let i = 0; i < numberOfPasswords; i++) {
     let password = "";
     for (let j = 1; j <= passwordLength; j++) {
       let word = Dictionary[Math.floor(Math.random() * Dictionary.length)] + (j >= passwordLength ? "" : separator);
