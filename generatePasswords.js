@@ -1,6 +1,5 @@
 const chars = require("./dictionary.json"); // Word dictionary to make passwords from
-const {question} = require('readline-sync');
-
+const { question } = require("readline-sync");
 
 /**
  *
@@ -31,7 +30,10 @@ function generatePassphrases(Dictionary) {
       passwordLength = question("Number of words you want in your passphrase, Enter for default (3): ") || 3;
     }
 
-    separator = question("The separator, Enter for default (-): ") || "-";
+    separator = question("The separator, Enter for default (-): ", {
+      keepWhitespace: true
+    }) || "-";
+    console.log("'" + separator + "'");
     TitleCase = question("Title case? Enter for default (false): ") || false;
     if (typeof TitleCase !== "boolean") TitleCase = false;
   }
