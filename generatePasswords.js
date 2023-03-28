@@ -6,7 +6,7 @@ const { question } = require("readline-sync");
  * @param {string[]} Dictionary
  */
 function generatePassphrases(Dictionary) {
-  let NumberOfPasswords = 3;
+  let numberOfPasswords = 3;
   let passwordLength = 3;
   let separator = "-";
   let TitleCase = false;
@@ -18,21 +18,24 @@ function generatePassphrases(Dictionary) {
   }
 
   if (defaults.toLowerCase() === "no") {
-    NumberOfPasswords = question("Number of passwords you want to generate, Enter for default (3): ") || 3;
-    while (typeof parseInt(NumberOfPasswords) != "number" || isNaN(parseInt(NumberOfPasswords)) || parseInt(NumberOfPasswords) > 100000) {
+    const numberOfPasswordsQuestion = "Number of passwords you want to generate, Enter for default (3): ";
+    numberOfPasswords = question(numberOfPasswordsQuestion) || 3;
+    while (typeof parseInt(numberOfPasswords) != "number" || isNaN(parseInt(numberOfPasswords)) || parseInt(numberOfPasswords) > 100000) {
       console.log("Invalid Values");
-      NumberOfPasswords = question("Number of passwords you want to generate, Enter for default (3): ") || 1;
+      numberOfPasswords = question(numberOfPasswordsQuestion) || 1;
     }
 
-    passwordLength = question("Number of words you want in your passphrase, Enter for default (3): ") || 3;
+    const passwordLengthQuestion = "Number of words you want in your passphrase, Enter for default (3): ";
+    passwordLength = question(passwordLengthQuestion) || 3;
     while (typeof parseInt(passwordLength) != "number" || isNaN(parseInt(passwordLength)) || parseInt(passwordLength) > 100) {
       console.log("Invalid Values");
-      passwordLength = question("Number of words you want in your passphrase, Enter for default (3): ") || 3;
+      passwordLength = question(passwordLengthQuestion) || 3;
     }
 
-    separator = question("The separator, Enter for default (-): ", {
-      keepWhitespace: true
-    }) || "-";
+    const separatorOptions = {
+      keepWhitespace: true,
+    };
+    separator = question("The separator, Enter for default (-): ", separatorOptions) || "-";
     console.log("'" + separator + "'");
     TitleCase = question("Title case? Enter for default (false): ") || false;
     if (typeof TitleCase !== "boolean") TitleCase = false;
